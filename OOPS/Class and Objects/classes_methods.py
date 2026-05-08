@@ -1,3 +1,17 @@
+'''
+Singleton class
+'''
+#
+# class A:
+#     x=None
+#     def __new__(cls):
+#         if cls.x is None:
+#             cls.x=super().__new__(cls)
+#         return cls.x
+# obj=A()
+# print(obj)
+# obj1=A()
+# print(obj1)
 
 
 # class student:
