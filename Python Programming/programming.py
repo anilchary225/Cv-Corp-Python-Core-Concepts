@@ -106,9 +106,19 @@ Basic List Questions
 
 # 13. Write a program to print the list in reverse order.
 
-# l=[1,2,3,4,5]
+l=[1,2,3,4,5,1,2,3,4]
 # l.reverse()
 # print(l)
+r=[]
+for i in range(1,len(l)+1) :
+
+    r.append(l[-i])
+print(r)
+for i in range(1, len(l)):
+    l[i],l[len(l)-i] = l[len(l)-i],l[i]
+print(l)
+
+
 
 # 14. Write a program to find sum of any two elements which is equal to key value
 
@@ -197,17 +207,30 @@ Basic List Questions
 # k=h
 # found = False
 # while not found:
+#     found=True
 #     for i in l:
 #
-#         if k%i== 0 :
-#             found=True
-#         else:
+#         if k%i!= 0 :
 #             found=False
-#     k+=h
+#             break
+#     if not found:
+#         k+=h
 # if found:
 #     print(k)
 
 # 26. Write a program to find the GCD of all numbers in the list.
+
+# l = [12, 24, 36]
+# small=min(l)
+# for i in range(small,0,-1):
+#     found=True
+#     for j in l:
+#         if j%i!=0:
+#             found=False
+#             break
+#     if found:
+#         print(i)
+#         break
 
 
 
