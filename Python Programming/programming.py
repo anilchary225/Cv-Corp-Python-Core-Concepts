@@ -106,17 +106,17 @@ Basic List Questions
 
 # 13. Write a program to print the list in reverse order.
 
-l=[1,2,3,4,5,1,2,3,4]
-# l.reverse()
+# l=[1,2,3,4,5,1,2,3,4]
+# # l.reverse()
+# # print(l)
+# r=[]
+# for i in range(1,len(l)+1) :
+#
+#     r.append(l[-i])
+# print(r)
+# for i in range(1, len(l)):
+#     l[i],l[len(l)-i] = l[len(l)-i],l[i]
 # print(l)
-r=[]
-for i in range(1,len(l)+1) :
-
-    r.append(l[-i])
-print(r)
-for i in range(1, len(l)):
-    l[i],l[len(l)-i] = l[len(l)-i],l[i]
-print(l)
 
 
 
@@ -143,22 +143,75 @@ print(l)
 # l.remove(max(l))
 # print(max(l))
 
+# l=[5,10,2,11,13,13,7,12,3]
+# h1=float('-inf')
+# h2=h1
+# for i in range(len(l)):
+#     if l[i]>h1:
+#         h2=h1
+#         h1=l[i]
+#     # elif l[i]>h2 and l[i]<h1:
+#     # element -> All values consider only l[i]>h2 ,if number -> No duplicates consider l[i]<h1
+#     elif h1>l[i]>h2 :
+#         h2=l[i]
+#
+# print(h2)
+
 # 17. Write a program to find the third-largest number in a list.
+
+# l=[5,10,2,11,13,13,7,12,3]
+# h1=float('-inf')
+# h2=h1
+# h3=h2
+# for i in range(len(l)):
+#     if l[i]>h1:
+#         h2=h1
+#         h3=h2
+#         h1=l[i]
+#     elif h2 >l[i] >h3 :
+#         h3=l[i]
+# print(h3)
 
 # l=[1,2,3,4,5,2,3,7,5,8,9,2,0]
 # l.remove(max(l))
 # l.remove(max(l))
 # print(max(l))
 
+# Write a program to find the fifth-largest number in a list.
+
+# l=[5,10,2,11,13,13,7,12,3]
+# print(sorted(l))
+# h1=float('-inf')
+# h2=h1
+# h3=h2
+# h4=h3
+# h5=h4
+# for i in range(len(l)):
+#     if l[i]>h1:
+#         h2=h1
+#         h3=h2
+#         h4=h3
+#         h5=h4
+#         h1=l[i]
+#     elif h2 > l[i] > h3:
+#         h3=l[i]
+#     elif h3 > l[i] >h4 :
+#         h4=l[i]
+#     elif h4 > l[i] >h5 :
+#         h5=l[i]
+# print(h5)
 
 # 18. Write a program to sort a list without using any built-in sorting functions.
 
 # l=[1,2,3,4,5,2,3,7,5,8,9,2,0]
+# k=5
 # for i in range(len(l)):
-#     for j in range(len(l)):
-#         if l[i]<l[j]:
+#     for j in range(i+1,len(l)):
+#         if l[i]<l[j]: #ascending order , l[i]<l[j] for descending order
 #             l[j],l[i]=l[i],l[j]
 # print(l)
+# print(l[-k])
+
 
 # 19. Write a program to find the Nth largest element in a list.
 
@@ -171,23 +224,54 @@ print(l)
 
 
 # 20. Write a program to print the first four smallest missing elements from a list
-# Searching
 
-# l = [1,3,4,5,3,5,8,2,0]
-# n=4
-# h = 0
+
+# l = list(map(int,input().split()))
+#
+# h = min(l)+1
 # count = 0
-# while count < n:
+# while True:
 #
 #     if h not in l:
 #         print(h)
 #         count += 1
+#         if count == 4:
+#             break
 #
 #     h += 1
 
-
+# Searching
 # 21. Write a program to perform linear search on a list.
+
+# l=[1,10,5,8,3,12]
+# k=5
+# found=False
+# for i in range(len(l)):
+#     if l[i]==k:
+#         found=True
+#         break
+# print('found' if found else 'Not found')
+
+
 # 22. Write a program to perform binary search on a sorted list.
+
+# l=[1,10,5,8,3,12]
+# k=9
+#l.sort()
+# found=False
+# first=0
+# last=len(l)-1
+# while first<=last:
+#     m=(first+last)//2
+#     if l[m]==k:
+#         found=True
+#         break
+#     elif k>l[m]:
+#         first=m+1
+#     else:
+#         last=m-1
+# print('Found' if found else 'Not Found')
+
 # 23. Write a program to return all index positions of a searched element in a list.
 # 24. Write a program to check whether a list is sorted or not.
 
@@ -196,6 +280,11 @@ print(l)
 # if l == l1:print('Sorted')
 # else:print('Not sorted')
 
+# l=[1,2,3,4,5]
+# found=True
+# for i in range(len(l)-1):
+#     if l[i]>l[i+1]:found=False
+# print('Sorted' if found else 'Not Sorted')
 
 
 
@@ -239,6 +328,16 @@ print(l)
 
 # 27. Write a program to find the factorial of each element in a list
 # Frequency
+
+# l=[1,5,6,3,6,7,8,4,2,5,7,8,9,3,6,7,8]
+#
+# for i in l:
+#     s = 1
+#     for j in range(1,i+1):
+#         s*=j
+#     print('factorial of {} is {}'.format(i,s))
+
+
 # 28. Write a program to find the frequency of each element in a list.
 
 # l=[1,5,6,3,6,7,8,4,2,5,7,8,9,3,6,7,8]
@@ -263,6 +362,11 @@ print(l)
 
 
 # 32. Write a program to find the unique element in a list.
+
+l=[1,5,6,3,6,7,8,4,2,5,7,8,9,3,6,7,8]
+l.sort()
+print(l)
+
 # 33. Write a program to find the least unique element in a list.
 # 34. Write a program to print elements whose frequency is greater than 1.
 # Rotation
