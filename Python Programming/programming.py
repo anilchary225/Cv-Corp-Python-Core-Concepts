@@ -363,9 +363,9 @@ Basic List Questions
 
 # 32. Write a program to find the unique element in a list.
 
-l=[1,5,6,3,6,7,8,4,2,5,7,8,9,3,6,7,8]
-l.sort()
-print(l)
+# l=[1,5,6,3,6,7,8,4,2,5,7,8,9,3,6,7,8]
+# l.sort()
+# print(l)
 
 # 33. Write a program to find the least unique element in a list.
 # 34. Write a program to print elements whose frequency is greater than 1.
@@ -381,3 +381,84 @@ print(l)
 # 41. Write a program to convert a list of digits into a number.
 # 42. Write a program to convert a number into a list of digits.
 # 43. Write a program to reverse a list and also reverse each element in the list.
+
+
+'''Password Validation'''
+
+# s = input()
+#
+# if len(s) == 9:
+#
+#     uc = lc = dc = False
+#     sp = True
+#
+#     for i in range(len(s)):
+#
+#         if s[i].isupper():
+#             uc = True
+#
+#         elif s[i].islower():
+#             lc = True
+#
+#         elif s[i].isdigit():
+#             dc = True
+#
+#         else:
+#             sp = False
+#             break
+#
+#
+#     if uc and lc and dc and sp:
+#         print("Valid Password")
+#
+#     else:
+#         print("Invalid")
+#
+# else:
+#     print("Invalid")
+
+'''Pancard Validation'''
+
+# pancard=input()
+# k='CHATPF'
+# if len(pancard)==10:
+#     valid = True
+#     for i in range(len(pancard)):
+#         if i<=2 or i==4 or i==9 and pancard[i].isupper():
+#             continue
+#         elif i==3 and pancard[i] in k :
+#             continue
+#         elif (i>=5 and i<=8) and pancard[i].isdigit():
+#             continue
+#         else:
+#             valid=False
+#
+#             break
+#     if valid :
+#         print('Pancard is Valid')
+#     else:
+#         print('Invalid')
+# else:
+#     print('Length of pancard must be equal to 10')
+
+'''Vehicle Number Validation'''
+
+# vn=input()
+#
+# if len(vn)==10:
+#     valid = True
+#     for i in range(len(vn)):
+#         if (i==0 or i==1 or i==4 or i==5) and vn[i].isupper():
+#             continue
+#         elif (i==2 or i==3 or i==6 or i==7 or i==8 or i==9 ) and vn[i].isdigit():
+#             continue
+#         else:
+#             valid = False
+#             break
+#     if valid :
+#         print('Vehicle number is Valid')
+#     else:
+#         print('Invalid Vehicle number')
+# else:
+#     print('Vehicle number must be greater than 10')
+
