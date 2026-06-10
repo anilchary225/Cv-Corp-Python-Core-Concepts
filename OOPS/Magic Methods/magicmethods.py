@@ -69,6 +69,7 @@ class A:
 a=A(2)
 b=A(5)
 print(a+b)
+print(a)
 
 '''__sub__  __mul__  __truediv__ __floordiv__  __pow__'''
 class A:
