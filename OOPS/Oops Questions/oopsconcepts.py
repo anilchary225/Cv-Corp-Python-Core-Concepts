@@ -66,8 +66,18 @@ as the system grows.
 #     PushNotifier()
 # }
 #
-# for notifier in notifiers:
-#     notifier.send('Your payment is done')
+# # for notifier in notifiers:
+# #     notifier.send('Your payment is done')
+#
+# for notify in notifiers:
+#     if isinstance(notify,EmailNotifier):
+#         notify.send('Your payment is done through Email')
+#     elif isinstance(notify,SMSNotifier):
+#         notify.send('Your Payment id done through SMS')
+#     elif isinstance(notify,PushNotifier):
+#         notify.send('Your payment is done through PUSH_NOTIFICATION')
+#     else:
+#         print('Invalid Notifier')
 
 
 '''
@@ -349,15 +359,20 @@ Explain:
 #         self.height=height
 #     def area(self):
 #         print('Triangle area: ',0.5*self.base*self.height)
-# areas=[
+# shapes=[
 #     Rectangle(10,20),
 #     Circle(5),
 #     Traingle(12,15)
 # ]
 #
-# for area in areas:
-#     area.area()
-#
+# for shape in shapes:
+#     if isinstance(shape,Rectangle):
+#         shape.area()
+#     elif isinstance(shape,Circle):
+#         shape.area()
+#     elif isinstance(shape,Traingle):
+#         shape.area()
+
 
 
 '''
@@ -443,12 +458,20 @@ Explain:
 #
 # ap=AudioPlugins()
 # mp=MediaPlugin()
-# ap=APIPlugin()
+# api=APIPlugin()
 #
-# l=[ap,mp,ap]
+# plugins=[ap,mp,ap]
 #
-# for i in l:
-#     i.run()
+# for plugin in plugins:
+#     # print(plugin)
+#     if isinstance(plugin,AudioPlugins):
+#         plugin.run()
+#     elif isinstance(plugin,MediaPlugin):
+#         plugin.run()
+#     elif isinstance(plugin,APIPlugin):
+#         plugin.run()
+#     else:
+#         print('Invalid Plugin')
 
 '''
 Design a BankAccount class.
@@ -607,76 +630,76 @@ Explain:
 '''
 
 
-# Abstract Authentication Class
-class Authentication(ABC):
-
-    def __init__(self, username, password):
-
-        # Protected Attribute
-        self._username = username
-
-        # Private Attribute
-        self.__password = password
-
-    # Shared Validation Logic
-    def _validate_credentials(self):
-
-        if len(self.__password) >= 6:
-            return True
-
-        return False
-
-    @abstractmethod
-    def authenticate(self):
-        pass
-
-
-# Email Authentication
-class EmailAuth(Authentication):
-
-    def authenticate(self):
-
-        if self._validate_credentials():
-            print(f"Email Authentication Successful for {self._username}")
-        else:
-            print("Invalid Email Credentials")
-
-
-# Google OAuth Authentication
-class GoogleAuth(Authentication):
-
-    def authenticate(self):
-
-        if self._validate_credentials():
-            print(f"Google Authentication Successful for {self._username}")
-        else:
-            print("Invalid Google Credentials")
-
-
-# OTP Authentication
-class OTPAuth(Authentication):
-
-    def authenticate(self):
-
-        if self._validate_credentials():
-            print(f"OTP Authentication Successful for {self._username}")
-        else:
-            print("Invalid OTP Credentials")
-
-
-# Client Code
-def login(auth_method):
-    auth_method.authenticate()
-
-
-# Objects
-email_user = EmailAuth("anil@gmail.com", "pass123")
-google_user = GoogleAuth("anil@gmail.com", "google789")
-otp_user = OTPAuth("9876543210", "otp456")
-
-
-# Authentication
-methods = [email_user, google_user, otp_user]
-
-for method in methods:
-    login(method)
+# # Abstract Authentication Class
+# class Authentication(ABC):
+#
+#     def __init__(self, username, password):
+#
+#         # Protected Attribute
+#         self._username = username
+#
+#         # Private Attribute
+#         self.__password = password
+#
+#     # Shared Validation Logic
+#     def _validate_credentials(self):
+#
+#         if len(self.__password) >= 6:
+#             return True
+#
+#         return False
+#
+#     @abstractmethod
+#     def authenticate(self):
+#         pass
+#
+#
+# # Email Authentication
+# class EmailAuth(Authentication):
+#
+#     def authenticate(self):
+#
+#         if self._validate_credentials():
+#             print(f"Email Authentication Successful for {self._username}")
+#         else:
+#             print("Invalid Email Credentials")
+#
+#
+# # Google OAuth Authentication
+# class GoogleAuth(Authentication):
+#
+#     def authenticate(self):
+#
+#         if self._validate_credentials():
+#             print(f"Google Authentication Successful for {self._username}")
+#         else:
+#             print("Invalid Google Credentials")
+#
+#
+# # OTP Authentication
+# class OTPAuth(Authentication):
+#
+#     def authenticate(self):
+#
+#         if self._validate_credentials():
+#             print(f"OTP Authentication Successful for {self._username}")
+#         else:
+#             print("Invalid OTP Credentials")
+#
+#
+# # Client Code
+# def login(auth_method):
+#     auth_method.authenticate()
+#
+#
+# # Objects
+# email_user = EmailAuth("anil@gmail.com", "pass123")
+# google_user = GoogleAuth("anil@gmail.com", "google789")
+# otp_user = OTPAuth("9876543210", "otp456")
+#
+#
+# # Authentication
+# methods = [email_user, google_user, otp_user]
+#
+# for method in methods:
+#     login(method)

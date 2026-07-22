@@ -1,0 +1,3 @@
+Python is a highly versatile, beginner-friendly programming language favored for its clean,
+English-like syntax. It is widely used for web development, data science, artificial intelligence, and automation.
+Python relies on whitespace and indentation to define code blocks instead of brackets, making it highly readable.
